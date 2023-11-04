@@ -1,28 +1,21 @@
-def es_numero_primo(numero):
-    if numero <= 1:
-        return False
-    if numero <= 3:
-        return True
-    if numero % 2 == 0 or numero % 3 == 0:
-        return False
+def encontrar_menor(precios):
+    if not precios:
+        return 0
+    menor_precio = min(precios)
+    return menor_precio
 
-    i = 5
-    while i * i <= numero:
-        if numero % i == 0 or numero % (i + 2) == 0:
-            return False
-        i += 6
-
-    return True
+def encontrar_mayor(precios):
+    if not precios:
+        return 0
+    mayor_precio = max(precios)
+    return mayor_precio
 
 if __name__ == "__main__":
-
-    try:
-        numero = int(input("Ingrese un numero entero: "))
-    except ValueError:
-        print("Ingrese un numero entero valido.")
-
-    if es_numero_primo(numero):
-        print(f"{numero} es un numero primo.")
+    precios = [50, 75, 46, 22, 80, 65, 8]
+    menor, mayor = encontrar_menor(precios), encontrar_mayor(precios)
+    
+    if menor != 0 and mayor != 0:
+        print(f"El precio más bajo es: {menor}")
+        print(f"El precio más alto es: {mayor}")
     else:
-        print(f"{numero} no es un numero primo.")
-
+        print("La lista de precios está vacía.")

@@ -1,10 +1,9 @@
-from src.main10 import es_numero_primo
+from src.main10 import encontrar_menor, encontrar_mayor
 
-def test_es_numero_primo():
-    assert es_numero_primo(2) == True
-    assert es_numero_primo(3) == True
-    assert es_numero_primo(17) == True
-    assert es_numero_primo(20) == False
-    assert es_numero_primo(29) == True
-    assert es_numero_primo(1) == False
-    assert es_numero_primo(0) == False
+def test_encontrar_menor():
+    precios = [5, 10, 3, 8, 2]
+    assert encontrar_menor(precios) == 2
+
+def test_encontrar_mayor():
+    precios = [1, 2, 3, 4, 5]
+    assert encontrar_mayor(precios) == 5
